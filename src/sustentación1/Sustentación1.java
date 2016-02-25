@@ -111,14 +111,15 @@ public class Sustentación1 {
     
     static public void MenuInscribir(){
         int opc1=0, busc, opc2=0;
+        leer= new Scanner(System.in);
         System.out.println("Opciónes: \n   1) Inscribir Nadador \n   2) Eliminar Nadador \n   3) Mostrar Prueba");
         opc1=leer.nextInt();
         switch(opc1){
             case 1:
                 inscritos= new Inscripcion();
                 busc=buscar();
-                persona[busc].MostrarDatos(persona[busc]);
                 if(busc!=0){
+                    persona[busc].MostrarDatos(persona[busc]);
                     inscritos= inscritos.Inscribir(persona[busc], lib, mari, pech, espal);
                     switch(inscritos.prueba){
                         case 1:
